@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.table-header {
+    padding-top: 0.75rem; /* equivalent to py-3 */
+    padding-bottom: 0.75rem; /* equivalent to py-3 */
+    padding-left: 1.5rem; /* equivalent to px-6 */
+    padding-right: 1.5rem; /* equivalent to px-6 */
+    font-size: 0.75rem; /* equivalent to text-xs */
+    font-weight: 500; /* equivalent to font-medium */
+    letter-spacing: 0.05em; /* equivalent to tracking-wider */
+    text-align: left; /* equivalent to text-left */
+    color: #4a5568; /* equivalent to text-gray-700 */
+    text-transform: uppercase; /* equivalent to uppercase */
+}
+
+.table-header-dark {
+    color: #a0aec0; /* equivalent to dark:text-gray-400 */
+}
