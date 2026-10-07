@@ -4,7 +4,9 @@
             @foreach ($categories as $category)
                 <a href="{{ route('categories.show', $category->id) }}">
                     <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
-                        <img class="w-full h-48" src="{{ Storage::url($category->image) }}" alt="Image" />
+                        @if (config('menu.show_images'))
+                            <img class="w-full h-48" src="{{ Storage::url($category->image) }}" alt="Image" />
+                        @endif
                         <div class="px-6 py-4">
                             <h4
                                 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase">
