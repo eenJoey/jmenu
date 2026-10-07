@@ -1,0 +1,127 @@
+/*
+ * Uiterlijk van het publieke menu, afgeleid van jeronimocoffee.nl.
+ * Alleen kleuren/typografie/vormgeving; de opbouw van de pagina's blijft ongewijzigd.
+ * Wordt alleen geladen op de publieke menupagina's (zie layouts/guest.blade.php),
+ * en alles is gescoped onder .jc-page zodat o.a. de loginpagina's niet veranderen.
+ *
+ * Kleuren: crème #fceee3, bruin #2a1611, antraciet #1a1a1a, grijs #b0b0b0
+ * Lettertypes: IBM Plex Sans (koppen/UI) en IBM Plex Serif (tekst)
+ */
+
+/* ---------- Header ---------- */
+
+/* Zoals jeronimocoffee.nl: header in dezelfde crèmekleur als de pagina,
+   donker logo in het midden en alleen een fijne lijn als scheiding */
+.jc-header {
+    box-shadow: none;
+    border-bottom: 1px solid rgba(42, 22, 17, 0.15);
+}
+
+.jc-header nav {
+    justify-content: center;
+}
+
+.jc-header nav > div {
+    padding: 0.25rem 0;
+}
+
+.jc-header .header__logo {
+    display: block;
+    height: 100px;
+    width: auto;
+    /* Het logobestand is licht op transparant; hier donker gemaakt voor de crème header */
+    filter: brightness(0);
+    opacity: 0.88;
+    transition: opacity 0.25s ease;
+}
+
+.jc-header a:hover .header__logo {
+    opacity: 0.6;
+}
+
+@media (max-width: 560px) {
+    .jc-header .header__logo {
+        height: 80px;
+    }
+}
+
+/* ---------- Pagina ---------- */
+
+.jc-page {
+    --jc-bg: #fceee3;
+    --jc-brown: #2a1611;
+    --jc-card: #fffaf6;
+    --jc-line: rgba(42, 22, 17, 0.15);
+    --jc-muted: rgba(42, 22, 17, 0.72);
+
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    color: var(--jc-brown);
+}
+
+/* Kaarten: plat en rustig i.p.v. zware schaduw */
+.jc-page .shadow-lg {
+    background-color: var(--jc-card);
+    border: 1px solid var(--jc-line);
+    border-radius: 1.25rem;
+    box-shadow: none;
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.jc-page a:hover .shadow-lg {
+    transform: translateY(-3px);
+    border-color: var(--jc-brown);
+}
+
+/* Afbeeldingen (als ze aanstaan) netjes bijsnijden i.p.v. uitrekken */
+.jc-page img.h-48 {
+    object-fit: cover;
+}
+
+/* Witte vlakken binnen de kaart laten meekleuren met de kaart */
+.jc-page .bg-white {
+    background-color: transparent;
+}
+
+/* Titels */
+.jc-page h4 {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-transform: none;
+}
+
+.jc-page .uppercase {
+    text-transform: none;
+}
+
+.jc-page .text-green-600,
+.jc-page .text-gray-700 {
+    color: var(--jc-brown);
+}
+
+/* Beschrijving */
+.jc-page p {
+    font-size: 0.97rem;
+    color: var(--jc-muted);
+}
+
+/* Prijsblok op dezelfde marge als de tekst erboven */
+.jc-page .shadow-lg > .p-4 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* Prijs als pill, zoals de knoppen op jeronimocoffee.nl */
+.jc-page span.text-green-600 {
+    display: inline-block;
+    padding: 0.3rem 1.1rem;
+    border: 1px solid currentColor;
+    border-radius: 100vw;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.3;
+}
